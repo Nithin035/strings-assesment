@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> strings</h1>
+
+<h3>1.Count Characters</h3>
+     
+<pre>
+    const countCharacters = (S) => 
+   {
+
+    let countupperA=0;
+    let countupperD=0;
+    for(let i=0; i< S.length; i++){
+    if(S[i]=="A" )  {
+      countupperA++;
+    }
+    if(S[i] == "D") {
+      countupperD++ ;
+    }
+    
+   }
+   return [countupperA,countupperD];
+    
+   };
+ </pre>
+ 
+<h3>2.Count the Heads</h3>
+<pre>
+            
+let Count_Occ = (s) => 
+{
+  
+let sot = sortString(s);
+let emt=" ";
+
+for(let i=0;i< sot.length-1;)
+     
+ {
+    let  count=1,temp;
+    
+    for(j=i+1;j < sot.length;j++){
+      
+    if(sot[i]==sot[j]){
+        count++;
+        
+    }
+    else{
+    temp=j;
+    break;
+    }
+      
+    }
+    if(count>1){
+    emt=emt+sot[i]+count;
+    }
+    i=temp;
+   
+    }
+    
+  return emt;
+     
+};
+
+function sortString(s) {
+    return s.split('').sort().join('');
+};
+ 
+</pre>
+
+<h3>3.Count the Vowels</h3>
+
+<pre>
+var Count_Vowels= (S) => 
+{
+let count=0;
+let s= S.toLowerCase()
+for(let  i=0; i < s.length; i++){
+     
+if((s[i]=="a") || (s[i]=="e") || (s[i]=="i")  || (s[i]=="o" ) || (s[i]=="u" )){
+        
+  count++;
+}
+} 
+    return count;
+    };
+     
+</pre>
+    
+<h3>4.Concatenate the Strings</h3>
+<pre>
+var Concatenate_Strings = (S1, S2) => 
+    {
+      let S3 = S1.concat(S2);
+      return S3;  
+    };
+         
+</pre>
+    
+    
+    
+<h3>5.Find Length</h3>
+<pre>
+        
+const findLength = (s1) => 
+{
+ let s="abcdefghijklmnopqrstuvwxyz"
+let r=s1.toLowerCase()
+let count=0;
+for(let i=0;i < s.length;i++){
+for(let j=0;j < r.length;j++){
+if(s[i]==r[j]){
+count++
+    }
+    }
+}
+return count;
+
+};
+</pre>
+    
+<h3>6.Find the Winner</h3>
+<pre>
+       
+var Game_Winner = (s) => 
+{
+  
+  let countA=0, countD=0;
+  for(let i=0;i < S.length;i++){
+       if(S[i]=="A"){
+         countA++;
+       }
+       else{
+         countD++
+       }
+  }
+  
+  if(countA>countD){
+    return "Aditya";
+  }
+  else if(countD>countA){
+    return "Danish";
+  }
+  else{
+    return "Draw";
+  }
+};
+ 
+
+          
+      </pre>
+    
+      <h3>Q7.Join Strings</h3>
+      <pre>
+        
+const joinStrings = (S, P) => 
+{
+    let join = (S+P);
+    return join;
+};
+ 
+</pre>
+
+<h4>8.Plaindrome Check</h4>
+
+<pre>
+   
+     var Palin_Check = (str) =>
+     {
+     let flag=1;
+     for(let i=0;i < parseInt(str.length/2);i++)
+     {
+     if(str.length==1){
+        return "True";
+        
+    }
+
+   else if(str[i]!=str[str.length-1-i])
+    {
+      flag=0;
+    }
+
+    }
+    if(flag==0){
+    return "False";
+    }
+    else{
+    return "True";
+}
+	 
+};
+
+</pre>
+    
+<h3>9.Reverse the String</h3>
+<pre>
+
+var Reverse_String = (str) => 
+{
+let rev=' ';
+for(let i=str.length-1; i>=0;i--){
+rev = rev+str[i];
+}
+    return rev;
+};
+     
+</pre>
+
+
+<h3>10.Match the Strings</h3>
+<pre>
+   
+var String_Match = (s1,s2) => 
+{
+let flag=1;
+   
+for(let i=0;i < S1.length; i++){
+if(S1[i]!=S2[i]){
+flag=0;
+  }
+  }
+ if(flag==0){
+    return "NO";
+    }
+else{
+    return "YES";
+    }
+          
+};
+ </pre>
+
+<h3>11.String Replace</h3>
+<pre>
+    
+var Replace = (s, pattern , text) => 
+{
+    let result=s.replace(pattern,text);
+     return result;
+};
+ 
+
+</pre>
+
+<h3>12.Split the String</h3>
+<pre>
+
+var Split_the_string = (S) => 
+{
+ let x=S.split(' ');
+return x;
+};
+     
+</pre>
+
+<h3>13.Count the Vowels and Consonants</h3>
+<pre>
+
+var Count_Vowels= (s) => 
+{
+let countv=0;
+let res=s.toLowerCase();
+for(let i=0; i< res.length; i++){
+    
+if((res[i]=="a") || (res[i]=="e") || (res[i]=="i")  || (res[i]=="o" ) || (res[i]=="u" ))
+{
+    countv++;
+    }
+}
+    return countv;
+          
+};
+    
+var Count_Consonants=(s) = > 
+{
+let countn=0;
+let res=s.toLowerCase();
+for(let i=0; i < res.length; i++){
+if((res[i]!="a") && (res[i]!="e") && (res[i]!="i")  && (res[i]!="o" ) && (res[i]!="u" ))
+{
+countn++;
+}
+}
+return countn;
+           
+};
+</body>
+</html>
